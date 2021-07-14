@@ -9,7 +9,12 @@ library(grid)
 library(ggpubr)
 library(car)
 
-setwd("/Users/nkrumahgrant/Desktop/Cell Morphology/Manuscript-Cell-size-full-submission/2h.24h-cell-size-csv/")
+
+dirname(rstudioapi::getActiveDocumentContext()$path)            # Finds the directory where this script is located
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))     # Sets the working directory to where the script is located
+getwd()
+PrimaryDirectory <- getwd()
+PrimaryDirectory
 
 #Data for Ar+1 was not collected on the 1/24/2020 and 1/25/2020. To compensate, we ran two replicates of Ara+1 on 2/5/2020 and 2/6/2020.
 #To make data analysis easier, I changed the date on the folder for one of the replicates collected on 2/5/2020 and 2/6/2020 to the 1/24/2020
