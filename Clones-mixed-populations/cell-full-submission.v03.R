@@ -12,8 +12,11 @@ library(rstatix)
 library(car)
 
 
-setwd("/Users/nkrumahgrant/Desktop/Cell Morphology/Manuscript-Cell-size-full-submission/Clones-mixed-populations/")
-#####functions####
+dirname(rstudioapi::getActiveDocumentContext()$path)            # Finds the directory where this script is located
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))     # Sets the working directory to where the script is located
+getwd()
+PrimaryDirectory <- getwd()
+PrimaryDirectory#####functions####
 
 #mod.boxplot: constructs boxplots with fifth to ninety-fifth percentiles as whisker points
 mod.boxplot <- function(x) {
