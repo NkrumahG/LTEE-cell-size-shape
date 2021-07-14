@@ -18,7 +18,13 @@ library(car)
 #mutate(RelFluor = Fluor2Mean/Fluor1Mean) %>% #dead/alive
 #mutate(PropFluor = Fluor2Mean/(Fluor2Mean + Fluor1Mean)) #dead/dead+alive
 
-D1<- read.csv("/Users/nkrumahgrant/Desktop/Cell Morphology/Manuscript-Cell-size-full-submission/cell-death-analysis/cell-death-raw-data.csv")
+dirname(rstudioapi::getActiveDocumentContext()$path)            # Finds the directory where this script is located
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))     # Sets the working directory to where the script is located
+getwd()
+PrimaryDirectory <- getwd()
+PrimaryDirectory
+
+D1<- read.csv("cell-death-raw-data.csv")
 
 #str(D1)
 
