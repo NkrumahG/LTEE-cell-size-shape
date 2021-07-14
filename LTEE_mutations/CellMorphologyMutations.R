@@ -5,7 +5,11 @@ library(tidyverse)
 library(grid)
 library(reshape2)
 
-setwd("/Users/nkrumahgrant/Desktop/Cell Morphology/Cell-size-full-submission/LTEE_mutations/")
+dirname(rstudioapi::getActiveDocumentContext()$path)            # Finds the directory where this script is located
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))     # Sets the working directory to where the script is located
+getwd()
+PrimaryDirectory <- getwd()
+PrimaryDirectory
 
 ShinyData <- list.files(pattern = "*.csv") 
 Data <- as.data.frame(do.call(rbind,Map('cbind', lapply(ShinyData, read.csv)))) %>% 
